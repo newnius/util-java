@@ -4,6 +4,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * 
+ * present an object without creating a new class
+ * note: unable to present list now
+ * 
  * @author Newnius
  * @version 0.1.0(General)
  * Dependencies

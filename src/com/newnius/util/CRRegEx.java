@@ -7,6 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * find certain string(s)
+ * or validate string of email, phone etc.
+ * 
  * @author Newnius
  * @version 0.1.0(General) 
  * Dependencies

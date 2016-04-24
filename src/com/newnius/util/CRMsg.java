@@ -1,6 +1,9 @@
 package com.newnius.util;
 
 /**
+ * 
+ * extends CRObject, often used in socket connection to exchange message
+ * 
  * @author Newnius
  * @version 0.1.0(General)
  * Dependencies

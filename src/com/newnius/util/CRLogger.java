@@ -4,6 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
+ * 
+ * log message and save them
+ * 
  * @author Newnius
  * @version 0.1.0(java SE version)
  * 

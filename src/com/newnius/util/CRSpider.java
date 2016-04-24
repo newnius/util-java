@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 
+ * get or post to url to get resources
+ * many customized options
+ * 
  * @author Newnius
  * @version 0.1.0(General)
  * Dependencies:

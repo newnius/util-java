@@ -10,6 +10,9 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
 
 /**
+ * 
+ * provide simple interface for database access
+ * 
  * @author Newnius
  * @version 0.1.0(JAVA SE)
  * Dependencies

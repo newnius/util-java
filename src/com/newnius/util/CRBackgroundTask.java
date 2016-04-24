@@ -4,6 +4,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
+ * 
+ * Do {@code whatToDo} in background and call {@code callback} when finished
+ * support thread pool
+ * 
  * @author Newnius
  * @version 0.1.0(JAVA SE)
  * Dependencies:

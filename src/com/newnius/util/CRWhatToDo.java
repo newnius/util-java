@@ -1,6 +1,9 @@
 package com.newnius.util;
 
 /**
+ * 
+ * Often use with {@code CRCallback} and {@code CRBackgroundTask} to finish a background task 
+ * 
  * @author Newnius
  * @version 0.1.0(General)
  * Dependencies

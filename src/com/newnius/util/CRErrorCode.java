@@ -1,6 +1,9 @@
 package com.newnius.util;
 
 /**
+ * 
+ * use errorcode instead of using int directly
+ * 
  * @author Newnius
  * @version 0.1.0(General)
  */
