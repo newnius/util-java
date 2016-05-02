@@ -9,6 +9,8 @@ package com.newnius.util;
  * Dependencies
  *  com.newnius.util.CRObject
  *
+ * @// FIXME: 16-4-27  unable to add list
+ * 
  */
 public class CRMsg extends CRObject{
     private int errno = 0;

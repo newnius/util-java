@@ -32,6 +32,8 @@ import org.apache.commons.dbcp2.BasicDataSourceFactory;
 		}
  *  </code>
  * 
+ * @FIXME query on autoCommit connection will cause result set has been closed exception
+ * 
  */
 public class CRDAO {
 	private static final String TAG = "CRDBManager";

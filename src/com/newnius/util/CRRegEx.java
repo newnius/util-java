@@ -28,7 +28,9 @@ public class CRRegEx {
             logger.debug("new match found:" + m.group());
             CRObject crObject = new CRObject();
             for(int i=0;i<=m.groupCount();i++){
-                crObject.set(i + "", m.group(i));
+            	if(m.group(i)!=null){
+            		crObject.set(i + "", m.group(i));
+            	}
             }
             list.add(crObject);
         }

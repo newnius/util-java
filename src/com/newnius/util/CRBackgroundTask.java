@@ -15,10 +15,13 @@ import java.util.concurrent.Executors;
  *   com.newnius.util.CRWhatToDo
  *   com.newnius.util.CRCallback
  *   
+ *   @TODO If too many tasks are submitted, performance will be rather slow
+ *   compare newFixedThreadPool,newCachedThreadPool,ThreadPoolExecutor
+ *   
  */
 public class CRBackgroundTask extends Thread {
 	private static final String TAG = "CRBackgroundTask";
-	private static CRLogger logger;
+	private static CRLogger logger = CRLogger.getLogger(TAG);;
 	private CRWhatToDo whatToDo;
 	private CRCallback callback;
 	private static ExecutorService executor;
@@ -33,7 +36,6 @@ public class CRBackgroundTask extends Thread {
 	 * */
 	public static void init(int poolSize){
 		if (executor == null) {
-			logger = CRLogger.getLogger(TAG);
 			CRBackgroundTask.poolSize = poolSize;
 			executor = Executors.newFixedThreadPool(poolSize);
 		}else{
