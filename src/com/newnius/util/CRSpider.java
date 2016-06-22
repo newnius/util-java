@@ -153,7 +153,7 @@ public class CRSpider {
             return msg;
         } catch (Exception ex) {
             logger.error(ex);
-            return new CRMsg(CRErrorCode.UNKNOWN_ERROR, ex.getMessage());
+            return new CRMsg(CRErrorCode.FAIL, ex.getMessage());
         }
     }
 
@@ -166,7 +166,7 @@ public class CRSpider {
             }
         } catch (Exception ex) {
             logger.error(ex);
-            return new CRMsg(CRErrorCode.UNKNOWN_ERROR, ex.getMessage());
+            return new CRMsg(CRErrorCode.FAIL, ex.getMessage());
         }
         return doPost(postdata);
     }
@@ -211,7 +211,7 @@ public class CRSpider {
             return msg;
         } catch (Exception ex) {
             logger.error(ex);
-            return new CRMsg(CRErrorCode.UNKNOWN_ERROR, ex.getMessage());
+            return new CRMsg(CRErrorCode.FAIL, ex.getMessage());
         }
     }
 
