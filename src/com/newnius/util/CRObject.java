@@ -14,12 +14,9 @@ import java.util.concurrent.ConcurrentHashMap;
  *   com.newnius.util.CRLogger
  */
 public class CRObject {
-    private static final String TAG = "CRObject";
-    private CRLogger logger;
     private ConcurrentHashMap<String, String> data;
 
     public CRObject() {
-        logger = CRLogger.getLogger(TAG);
         data = new ConcurrentHashMap<>();
     }
 
@@ -27,14 +24,14 @@ public class CRObject {
         if (data.containsKey(key)) {
             data.remove(key);
         } else {
-            logger.warn(key + " not exist.");
+            CRLogger.warn(getClass().getName(), key + " not exist.");
         }
     }
 
     public void set(String key, String value) {
         if (data.containsKey(key)) {
             data.remove(key);
-            logger.info(key + " is overwritten.");
+            CRLogger.info(getClass().getName(),key + " is overwritten.");
         }
         data.put(key, value);
     }
@@ -42,7 +39,7 @@ public class CRObject {
     public void set(String key, Integer value) {
         if (data.containsKey(key)) {
             data.remove(key);
-            logger.info(key + " is overwritten.");
+            CRLogger.info(getClass().getName(),key + " is overwritten.");
         }
         data.put(key, value + "");
     }
@@ -50,7 +47,7 @@ public class CRObject {
     public void set(String key, Float value) {
         if (data.containsKey(key)) {
             data.remove(key);
-            logger.info(key + " is overwritten.");
+            CRLogger.info(getClass().getName(),key + " is overwritten.");
         }
         data.put(key, value + "");
     }
@@ -59,7 +56,7 @@ public class CRObject {
     public void set(String key, Boolean value) {
         if (data.containsKey(key)) {
             data.remove(key);
-            logger.info(key + " is overwritten.");
+            CRLogger.info(getClass().getName(),key + " is overwritten.");
         }
         //0 for false, others for true
         data.put(key, !value?"0":"1");
@@ -69,7 +66,7 @@ public class CRObject {
     public String get(String key) {
         if (data.containsKey(key))
             return data.get(key);
-        logger.warn(key + " not exist.");
+        CRLogger.warn(getClass().getName(),key + " not exist.");
         return null;
     }
 
@@ -77,7 +74,7 @@ public class CRObject {
         try {
             if (data.containsKey(key))
                 return Integer.parseInt(data.get(key));
-            logger.warn(key + " not exist.");
+            CRLogger.warn(getClass().getName(),key + " not exist.");
             return null;
         } catch (Exception ex) {
             return null;
@@ -88,7 +85,7 @@ public class CRObject {
         try {
             if (data.containsKey(key))
                 return Long.parseLong(data.get(key));
-            logger.warn(key + " not exist.");
+            CRLogger.warn(getClass().getName(),key + " not exist.");
             return null;
         } catch (Exception ex) {
             return null;
@@ -99,7 +96,7 @@ public class CRObject {
         try {
             if (data.containsKey(key))
                 return Float.parseFloat(data.get(key));
-            logger.warn(key + " not exist.");
+            CRLogger.warn(getClass().getName(),key + " not exist.");
             return null;
         } catch (Exception ex) {
             return null;
@@ -110,7 +107,7 @@ public class CRObject {
         try {
             if (data.containsKey(key))
                 return data.get(key).equals("0")?false:true;
-            logger.warn(key + " not exist.");
+            CRLogger.warn(getClass().getName(),key + " not exist.");
             return null;
         } catch (Exception ex) {
             return null;
