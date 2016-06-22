@@ -142,6 +142,8 @@ public class CRSpider {
             if (conn.getHeaderField("Set-Cookie") != null) {
                 cookie = conn.getHeaderField("Set-Cookie");
             }
+            headers = conn.getHeaderFields();
+            
             is.close();
             br.close();
             conn.disconnect();

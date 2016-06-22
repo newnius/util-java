@@ -54,7 +54,18 @@ public class CRObject {
         }
         data.put(key, value + "");
     }
+    
 
+    public void set(String key, Boolean value) {
+        if (data.containsKey(key)) {
+            data.remove(key);
+            logger.info(key + " is overwritten.");
+        }
+        //0 for false, others for true
+        data.put(key, !value?"0":"1");
+    }
+
+    
     public String get(String key) {
         if (data.containsKey(key))
             return data.get(key);
@@ -88,6 +99,17 @@ public class CRObject {
         try {
             if (data.containsKey(key))
                 return Float.parseFloat(data.get(key));
+            logger.warn(key + " not exist.");
+            return null;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+    
+    public Boolean getBoolean(String key) {
+        try {
+            if (data.containsKey(key))
+                return data.get(key).equals("0")?false:true;
             logger.warn(key + " not exist.");
             return null;
         } catch (Exception ex) {
