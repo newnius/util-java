@@ -17,6 +17,19 @@ public class Main {
 	}
 	
 	public static void main(String[] args){
+		CRObject object = new CRObject();
+		CRObject object2 = new CRObject();
+		object.set("string", "value");
+		object2.set("string2", "value");
+		object.set("object", object2);
+		CRLogger.warn("TAG", object.toString());
+		
+		CRMsg msg = new CRMsg(CRErrorCode.SUCCESS);
+		msg.set("obj", object);
+		CRLogger.warn("TAG",  msg.toString());
+		
+		
+		
 		CRWhatToDo whatToDo = new CRWhatToDo() {
 			
 			@Override
@@ -36,7 +49,7 @@ public class Main {
 			
 			@Override
 			public void callback(CRMsg msg) {
-				System.out.println(msg.getErrno()+"");
+				System.out.println(msg.getCode()+"");
 			}
 		};
 		
@@ -57,4 +70,5 @@ public class Main {
 		}
 		
 	}
+	
 }

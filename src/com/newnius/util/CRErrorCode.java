@@ -11,8 +11,7 @@ public class CRErrorCode extends CRCode{
     public static final int SUCCESS = 0;
     public static final int FAIL = 1;
 
-
-
+    
     public static String getMsg(int errorCode){
         switch (errorCode){
             case SUCCESS:
@@ -21,6 +20,8 @@ public class CRErrorCode extends CRCode{
                 return "出现错误 (错误码:"+errorCode+")";
         }
     }
+    
+    
 
 
 }
