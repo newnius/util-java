@@ -1,7 +1,7 @@
 package com.newnius.util;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,7 +15,7 @@ import java.util.Map;
 public class CRObject {
 	private HashMap<String, String> data;
 	private HashMap<String, CRObject> objects;
-	private HashMap<String, ArrayList<CRObject>> lists;
+	private HashMap<String, List<CRObject>> lists;
 
 	public CRObject() {
 		data = new HashMap<>();
@@ -147,9 +147,9 @@ public class CRObject {
 		}
 		str += "},\n";
 		str += "lists==>{\n";
-		for (Map.Entry<String, ArrayList<CRObject>> entry : lists.entrySet()) {
+		for (Map.Entry<String, List<CRObject>> entry : lists.entrySet()) {
 			str += entry.getKey() + "==>\n";
-			for (CRObject object : (ArrayList<CRObject>) entry.getValue()) {
+			for (CRObject object : (List<CRObject>) entry.getValue()) {
 				str += "    " + object.toString() + "\n";
 			}
 
@@ -158,12 +158,11 @@ public class CRObject {
 		return str;
 	}
 
-	public void set(String key, ArrayList<CRObject> list) {
+	public void set(String key, List<CRObject> list) {
 		setList(key, list);
 	}
 
-	public void setList(String key, ArrayList<CRObject> list) {
-		lists.put(key, list);
+	public void setList(String key, List<CRObject> list) {
 		if (lists.containsKey(key)) {
 			lists.remove(key);
 			CRLogger.info(getClass().getName(), key + " is overwritten.");
@@ -171,7 +170,7 @@ public class CRObject {
 		lists.put(key, list);
 	}
 
-	public ArrayList<CRObject> getList(String key) {
+	public List<CRObject> getList(String key) {
 		if (lists.containsKey(key))
 			return lists.get(key);
 		CRLogger.warn(getClass().getName(), key + " not exist.");
