@@ -51,5 +51,9 @@ public class CRRegEx {
             return crObject;
         }
     }
+    
+    public static boolean matches(String str, String pattern){
+    	return str.matches(pattern);
+    }
 
 }
